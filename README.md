@@ -100,7 +100,7 @@ restriction is that relative position fixnums must not be negative, which
 is in keeping with REXX semantics. Otherwise it tries not to complain about
 mundane things in your templates.
 
-If you think you've found a bug, try your PARSE with Object Object REXX and
+If you think you've found a bug, try your PARSE with Open Object REXX and
 see what it does. My goal is to match its semantics for any functionality
 shared between the two, however note that the Lisp version has additional
 capabilities which can't be compared.
@@ -245,7 +245,7 @@ any template matches for this symbol will not be extracted or saved to any varia
 #### REXX variables vs. Lisp s-expressions
 
 If you're reading REXX documentation (or otherwise familiar with it), such
-as [Object Object REXX Reference](https://rexxinfo.org/reference/articles/oorexxref.pdf),
+as [Open Object REXX Reference](https://rexxinfo.org/reference/articles/oorexxref.pdf),
 note that the use of parenthesized forms is different between REXX and
 REXXPARSE:PARSE.  Where REXX would use a parenthesized expression to do a
 language variable references, REXXPARSE uses parenthesized forms in templates for their
