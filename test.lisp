@@ -306,12 +306,10 @@ Returns the value(s) returned by BODY."
           (unwind-protect (progn ,@body)
             (fmakunbound ',f-sym)))))))
 
-;; My with-redef as of May-15-2024 doesn't seem to work on ECL and perhaps other
-;; tests and it isn't worth making it work for all platforms because the
-;; macroexpansion logic is the same across all platforms. So if it (correct
-;; parse behavior with respect to this test) works for one platform, we know it
-;; works for all
-#+SBCL
+;; The redef logic used by this test doesn't work with ECL.  It works with SBCL, ACL,
+;; ABCL, CCL, and Lispworks Basically the flet 'extractor' function used in the redef
+;; is never called.  I haven't been able to make a simpler reprudicible case yet.
+#-ECL
 (test no-useless-extractions
   (let ((counter 0)
         (old-extractor #'rexxparse::extract))
